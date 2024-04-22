@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenskart.com</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    li:hover {
+      border-bottom: 5px solid black;
+    }
+  </style>
+  <link rel="icon" href="data:image/png;base64,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" type="image/x-icon">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm- navbar-light bg-light">
+
+    <img style="height:70px;width: 300px;"
+      src="https://static.lenskart.com/media/desktop/img/site-images/main_logo.svg">
+    <img style="height:40px;width: 150px;"
+      src="https://static5.lenskart.com/media/uploads/lenskart-helpline-number-new-9999899998-desktop.png">
+    <form class="form-inline my-2 my-lg-0">
+      <input style="width:320px;margin-left: 50px;" class="form-control-sm rounded mr-sm-2" type="search"
+        placeholder="what are you looking for ?" aria-label="Search">
+    </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Track order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign in & sign up</a>
+        </li>
+        <!-- <img style="height: 30px;width: 30px;" src="data:image/png;base64,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"> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Wish list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cart</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light ">
+    <div style="font-family: LKFuturaStd-Medium, Arial, sans-serif;font-size: 18px;" class="collapse navbar-collapse"
+      id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#eye"><b>Eye glasses</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>computer glasses</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>kids glasses</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Contact lenses</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Sun glasses</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Home eye-test</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Store locator</b></a>
+        </li>
+        <li class="nav-item">
+          <img src="https://static1.lenskart.com/media/desktop/img/May22/3dtryon1.png" height="30px" width="60px"
+            class="rounded-pill ml-5">
+        </li>
+        <li class="nav-item">
+          <img src="https://static1.lenskart.com/media/desktop/img/Mar22/13-Mar/blulogo.png" height="30px" width="60px"
+            class="rounded-pill">
+        </li>
+        <li class="nav-item">
+          <img src="https://static5.lenskart.com/media/uploads/gold_max_logo_dc.png" height="30px" width="60px"
+            class="rounded-pill">
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <img src="https://static5.lenskart.com/media/uploads/1920x520-gantan.png" class="col-sm-12" alt="" height="350px"
+    width="100%">
+  <div class="container-fluid">
+    <div id="myCarousel" class="carousel slide col-sm-12" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://static1.lenskart.com/media/desktop/img/2024/jan/patriot/Web-banner.jpg"
+            class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://static5.lenskart.com/media/uploads/web-banner.gif" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://static1.lenskart.com/media/desktop/img/oct9/holiday-edit/Web-banner.jpg"
+            class="d-block w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="https://static5.lenskart.com/media/uploads/desktop-matte.jpg" class="d-block w-100" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="https://static1.lenskart.com/media/desktop/img/nov23/gulmarg/Web-banner%20option%201-min.png"
+            class="d-block w-100" alt="Slide 5">
+        </div>
+      </div>
+      <button style="width: 40px;height: 40px;position: absolute;top: 150px;" class="carousel-control-prev ml-5"
+        type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+      </button>
+      <button style="width: 40px;height: 40px;position: absolute;top: 150px;" class="carousel-control-next  mr-5"
+        type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+      </button>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row mt-5">
+      <div id="eye" class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/i/gold-black-tortoise-full-rim-rectangle-john-jacobs-supreme-steel-jj-e11540-c7-eyeglasses_g_2731_11_10_2022.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Lenskart Blu</h5>
+            <p class="card-text">Blue Block Screen Glasses<br>Size : Medium</p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/o/john-jacobs-jj-e10235-c7-eyeglasses_g_2374.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">John Jacobs</h5>
+            <p class="card-text">Transparent Full Rim Wayfarer<br>Size : Medium</p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top "
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//l/i/transparent-gold-full-rim-rectangle-lenskart-air-essentials-la-e13517-c2-eyeglasses_csvfile-1695816767916-g_7546_27_09_2023.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Lenskart Hustlr</h5>
+            <p class="card-text">Navy Full Rim Wayfarer
+              <br> Size : Medium
+            </p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/i/gold-black-tortoise-full-rim-rectangle-john-jacobs-supreme-steel-jj-e11540-c7-eyeglasses_g_2731_11_10_2022.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Lenskart Blu</h5>
+            <p class="card-text">Blue Block Screen Glasses<br>Size : Medium</p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/o/john-jacobs-jj-e10235-c7-eyeglasses_g_2374.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">John Jacobs</h5>
+            <p class="card-text">Transparent Full Rim Wayfarer<br>Size : Medium</p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 sol-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//l/i/transparent-gold-full-rim-rectangle-lenskart-air-essentials-la-e13517-c2-eyeglasses_csvfile-1695816767916-g_7546_27_09_2023.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Lenskart Hustlr</h5>
+            <p class="card-text">Navy Full Rim Wayfarer
+              <br> Size : Medium
+            </p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/i/gold-black-tortoise-full-rim-rectangle-john-jacobs-supreme-steel-jj-e11540-c7-eyeglasses_g_2731_11_10_2022.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Lenskart Blu</h5>
+            <p class="card-text">Blue Block Screen Glasses<br>Size : Medium</p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/o/john-jacobs-jj-e10235-c7-eyeglasses_g_2374.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">John Jacobs</h5>
+            <p class="card-text">Transparent Full Rim Wayfarer<br>Size : Medium</p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="card ml-5  border border-5 border-dark" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//l/i/transparent-gold-full-rim-rectangle-lenskart-air-essentials-la-e13517-c2-eyeglasses_csvfile-1695816767916-g_7546_27_09_2023.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Lenskart Hustlr</h5>
+            <p class="card-text">Navy Full Rim Wayfarer
+              <br> Size : Medium
+            </p>
+            <a href="#" class="btn btn-primary">move to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid">
+  <h1 class="text-center mt-3">AQUACOLOR - GLAM UP WITH COLOR LENSES  </h1><br>
+  <img src="https://static1.lenskart.com/media/desktop/img/Oct22/kiara/Refresh-Banner-Web.gif"width="100%" alt="">
+<h1 class="text-center mt-3">FIND THE PERFECT FIT</h1><br>
+</div>
+<div class="container mt-4">
+<div class="flex-container">
+  <div class="row">
+  <div class="flex-item col-lg-6">
+    <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/eye-square10.jpg" width="550px">
+  </div>
+  <div class="flex-item col-lg-6">
+    <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/ce-square.jpg"width="560px">
+    <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/sun-square.jpg"width="560px">
+  </div>
+  </div>
+</div><br>
+<div style="margin-left: 2px;" class="row">
+  <img class="col-lg-6"  src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/power-sun-square.jpg" >
+  <img class="col-lg-6"  src="https://static1.lenskart.com/media/desktop/img/Nov20/25-Nov/Banner03_TileDesktop.jpg">
+</div>
+</div><br>
+<div class="container-fluid"style="background-color:#FFC223">
+    <h1 class="text-center mt-2">MEET OUR HAPPY CUSTOMERS</h1>
+    <div class="row mt-4 pb-5">
+    <iframe class="col-lg-4" height="320px"  src="https://www.youtube.com/embed/HYPqf_eVvvM?si=2YjCditGtHbEa7QJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="col-lg-4" height="320px"  src="https://www.youtube.com/embed/SQm3RxXRunw?si=Qc0K97s2gCHV34r8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="col-lg-4" height="320px" src="https://www.youtube.com/embed/IZpUQ-S_LcM?si=oGMSWxCHuEA4r8_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>
+<br>
+   <div style="background-color: #000042;" class=" container-fluid card text-light">
+    <div style="font-size: xx-large;font-family: LKFuturaStd-Medium, Arial, sans-serif;;" class="card-header">
+      Buy The Best Eyewear From Lenskart
+    </div>
+    <div class="card-body">
+      <p class="card-text">Lenskart Is The Leading E-Commerce Portal For Eyewear In India. It Has Revolutionised The Eyewear Industry In The Country With Its Omni-Channel Approach. From An Ever-Growing Number Of Offline Stores Across Major Cities In The Country To Innovative Integration Of Technology While Purchasing Online, Lenskart Caters To Every Customer With Several Deals And Offers.<br>A One-Stop Online Solution For Purchasing Eyewear And Its Accessories, Lenskart Delivers Them Right At Your Doorstep With Convenient Methods Of Payment. Sunglasses as well as Eyeglasses Are Available For Men And Women In A Diverse Array Of Styles And Trendy Colours. If You Want To Try Out Contact Lenses, Pick The Ones Of Your Choice From The Extensive Variety Of Coloured Contact Lenses From Our Online Store.
+      </p>
+      <div class="row">
+      <img style="margin-left: 42%;"  src="https://static.lenskart.com/media/desktop/img/play-store.svg">
+     <img src="https://static.lenskart.com/media/desktop/img/app-store.svg"> </div><br>
+      <a style="margin-left: 28%;" href="#" class="btn btn-primary">Download Lenskart App to buy
+        Eyeglasses, Sunglasses and Contact Lenses</a>
+    </div>
+    <div style="margin-left: 42%;" class="card-footer text-body-secondary">
+      Version 1.0.0
+||
+Follow Us
+
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS (popper.js is required for some Bootstrap components) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</body>
+
+</html>
